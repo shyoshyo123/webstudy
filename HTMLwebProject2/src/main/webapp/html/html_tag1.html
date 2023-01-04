@@ -1,0 +1,140 @@
+<!-- 
+    =HTML (태그+속성)
+           <태그명 속성명="값"속성명="값"...></태그명>
+           <태그명 속성명="값" /> => EMPTY 태그
+                 --------------속성의 값을 사용
+          => 초기값을 지정하면 변경할 수 없다(정적 페이지)    
+          => 동적 => 자바스크립트
+          => HTML(화면출력)=> 투박하다/CSS
+          => HTML/CSS/JavaScript
+                      ----------- 데이터가 없는 상태 (데이터 전달 :자바)
+          => 브라우저에서 실행할 수 있는 언어 => ML만 가능하다(HTML,XML,JSON)
+                                                     ----------
+                                                 HTML:고정(태그,속성)
+                                                 XML :가변(모든 태그와 속성=>사용자 정의)                
+          1) HTML 기본문서 구조
+          = <태그명></태그명>,<태그명/>
+          = 태그는 소문자로 사용한다
+          = 여는 태그와 닫는 태그가 명확해야한다   
+          = 적당히 들여쓰기 한다
+          = 태그는 속성과 같이 사용하는 습관을 기른다
+            모든 태그가 가지고 있는 속성
+            ------------------- 구분자 : id, class, name, style(인라인 css => 각태그별로 디자인)
+                                       ---------  -----
+                                           |        | 자바에서 전송된 데이터값을 받는경우
+                                      자바스크립트에서 제어,css   
+         = 포함관계를 명확하게 한다
+         
+         *** 구조
+         <DOCTYPE html>                                       
+         <html>
+         <head>   생략이 가능 (설정파일이 없는 경우)
+          출력하는 태그가 아님                          
+         </head>   
+           <body>
+           브라우저 출력
+          </body>                       
+         </html>   
+         
+         <h3></h3> => <body>자동 인식   
+         =<body> : 화면출력 (UI)      
+         1)글자관련태그(<b>,<strong>,<em> => 강조)
+                   <h1>~<h6> => 제목
+                   <br>,<p> => 간격 조절
+                   <i> => 이탤릭체
+                   <small>,<sub>,<sup>
+                   
+         2)목록 관련 (<ul>,<ol>,<table>,<dl>)
+         2-2) <a> : 앵커 > 화면 변경
+         3)멀티미디어 : img , embed
+         3-1)입력창 : input, textarea, select
+                   ------
+                     type
+                       = text : 한줄 문자열
+                       = password : 암호화
+                       = radio : 라디오 버튼
+                       = checkbox
+                       ***= date
+                       = submit :전송 버튼 <button>, type=image
+                       = button : 자바스크립트에서 처리
+                       = rest : 초기화 버튼
+                       ***= number
+         4)화면분할 : div, span
+         5)html5에 추가된 태그  : header, footer, section, article, nav ...            
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="UTF-8">
+     <title>Insert title here</title>
+   </head>
+   <body>
+        <!--  
+             <img> 이미지 출력
+             --------------png,gif,jpg만 출력이 가능
+             1) 속성 
+                =src => 파일명 지정 (원격,폴더)
+                        -------./image/a.jpg
+                        ------- image/a.jpg
+                        -------------------------------HTML파일과 같은 폴더에 있는 경우
+                        -------../image/a.jpg
+                        -------------------------------HTML문서가 있는 폴더와 다른 폴더에 있는 경우
+                        -------../../image/../a.jpg
+                -------
+                =width
+                =height
+                ------- 축소 확대
+                -------------
+                =name : 자바에서 데이터값을 받을 경우에 사용
+                -------------
+                =id => 중복이 없다
+                =class => 중복이 가능
+                ------------- CSS , JavaScript => 구분자
+                =style
+                -------------
+                
+         -->
+         <img src="../image/F1.jpg" width=100 height="100" title="야채볶음밥">
+         <img src="../image/F2.jpg" width=450 height="450" title="감자옹심이">
+         <p>
+         <img src="../image/F4.jpg"><br>
+         <b>KFC도 울고갈 코울슬로 연말파티 사이드 메뉴로 최고</b>
+         <p>
+         <!-- 이미지와 설명을 동시에 처리 : card -->
+         <figure>
+          <img src="../image/F4.jpg">
+          <figcaption>KFC도 울고갈 코울슬로 연말파티 사이드 메뉴로 최고</figcaption>
+         </figure>
+         <p>
+         <img src="../image/food.jpg" usemap="#food">
+         <map name="food">
+           <area shape="rect" coords="" href="html_tag2.html">
+         </map>
+         <!-- 에러: 404 (파일이 존재하지 않는 경우)
+                  403 (보안: 접속거부)
+                  500 (자바 오류)
+                  412 (한글 변환 => UTF => UFT)
+                  400 (매칭이 안되는 경우)
+                  
+          -->
+        <map>
+        <p>
+        <figure>
+         <embed src="http://youtube.com/embed/kihrFxwdMb4" width="450" height="400">
+          <figcaption>아바타 : 물의 길</figcaption>
+        </figure>
+        <p>
+        <figure>
+         <iframe src="http://youtube.com/embed/kihrFxwdMb4" width="450" height="400">
+          <figcaption>아바타 : 물의 길</figcaption>
+        </figure>
+        </map>  
+   </body>
+</html>
+
+
+
+
+
+
+
