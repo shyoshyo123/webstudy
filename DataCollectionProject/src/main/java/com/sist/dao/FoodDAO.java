@@ -1,15 +1,14 @@
 package com.sist.dao;
 import java.util.*;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
 import java.sql.*;
 public class FoodDAO {
    private Connection conn;
    private PreparedStatement ps;
    private String URL="jdbc:oracle:thin:@localhost:1521:XE";
+   public static void main(String[] args) {
+	  FoodDAO dao=new FoodDAO();
+	  dao.empData();
+   }
    public FoodDAO()
    {
 	   try
@@ -31,6 +30,28 @@ public class FoodDAO {
 		   if(ps!=null) ps.close();
 		   if(conn!=null) conn.close();
 	   }catch(Exception ex) {}
+   }
+   public void empData()
+   {
+	   try
+	   {
+		   getConnection();
+		   String sql="SELECT ename FROM emp";
+		   ps=conn.prepareStatement(sql);
+		   ResultSet rs=ps.executeQuery();
+		   while(rs.next())
+		   {
+			   System.out.println(rs.getString(1));
+		   }
+		   rs.close();
+	   }catch(Exception ex)
+	   {
+		   ex.printStackTrace();
+	   }
+	   finally
+	   {
+		   disConnection();
+	   }
    }
    // 맛집 카테고리 추가 ==> JPA ==> save(vo)
    public void foodCategoryInsert(CategoryVO vo) // 30
@@ -79,6 +100,7 @@ public class FoodDAO {
 			   vo.setTitle(rs.getString(2));
 			   vo.setLink("https://www.mangoplate.com"+rs.getString(3));
 			   list.add(vo);
+			   System.out.println();
 		   }
 		   rs.close();
 	   }catch(Exception ex)
@@ -114,6 +136,13 @@ public class FoodDAO {
     REFERENCES project_category(cno)
 );
     */
+   /*
+    *   String[] gus = { "강서구", "양천구", "구로구", "마포구", "영등포구", "금천구",
+				    "은평구", "서대문구", "동작구", "관악구", "종로구", "중구", "용산구", "서초구", "강북구",
+				    "성북구", "도봉구", "동대문구", "성동구", "강남구", "노원구", "중랑구", "광진구", "송파구",
+				    "강동구","홍대","건대" };
+	    https://www.mangoplate.com/search/%EB%8C%80%EA%B5%AC
+    */
    public void foodDetailInsert(FoodVO vo)
    {
 	   try
@@ -148,10 +177,7 @@ public class FoodDAO {
 		   disConnection();
 	   }
    }
-  
 }
-
-
 
 
 
