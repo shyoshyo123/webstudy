@@ -1,6 +1,7 @@
 package com.sist.dao;
 /*
- *   FNO        NOT NULL NUMBER         
+ *   
+FNO        NOT NULL NUMBER         
 CNO                 NUMBER         
 POSTER     NOT NULL VARCHAR2(1000) 
 NAME       NOT NULL VARCHAR2(100)  
