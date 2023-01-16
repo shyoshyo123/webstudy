@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="row">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -19,15 +19,16 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="../images/shop.jpg" title="쇼핑" style="width: 1200px; height: 700px">
+      <img src="../images/shop.jpg" title="쇼핑" style="width:1200px;height: 700px">
+      
     </div>
 
     <div class="item">
-      <img src="../images/tr.jpg" alt="여행" style="width: 1200px; height: 700px">
+      <img src="../images/tr.jpg" title="여행" style="width:1200px;height: 700px">
     </div>
 
     <div class="item">
-      <img src="../images/loc.jpg" alt="명소" style="width: 1200px; height: 700px">
+      <img src="../images/loc.jpg" title="명소" style="width:1200px;height: 700px">
     </div>
   </div>
 

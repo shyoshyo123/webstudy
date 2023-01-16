@@ -10,10 +10,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">JSPExample</a>
+      <a class="navbar-brand" href="#">JSPExam</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../main/main.jsp">Home</a></li>
+      <li class="active"><i class="fa-solid fa-house"></i><a href="../main/main.jsp">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">회원
         <span class="caret"></span></a>
@@ -27,9 +27,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">서울여행
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-        <%-- 블록별 페이지 나누기 --%>
+          <%-- 블록별 페이지 나누기 --%>
           <li><a href="../main/main.jsp?mode=1">명소</a></li>
-          <%--페이지 나누기 숙제 --%>
+          <%-- 페이지나누기 숙제 --%>
           <li><a href="../main/main.jsp?mode=2">자연&관광</a></li>
           <li><a href="../main/main.jsp?mode=3">쇼핑</a></li>
         </ul>
